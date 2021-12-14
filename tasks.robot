@@ -11,7 +11,8 @@ Decode Email to Work Item
     ${body}  ${has_attachments}   Get Decoded Email Body    ${message}
 
     Create output work item
-    Set Work Item Payload    ${message}[_headers]
+    ${headers}=  Evaluate  dict($message._headers)
+    Set Work Item Payload    ${headers}
     Set work item variables
     ...  rawEmail=${payload}[rawEmail]
     ...  Has-Attachments=${has_attachments}  
