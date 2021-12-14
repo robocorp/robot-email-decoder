@@ -11,15 +11,13 @@ Decode Email to Work Item
     ${body}  ${has_attachments}   Get Decoded Email Body    ${message}
 
     Create output work item
+    Set Work Item Payload    ${message}[_headers]
     Set work item variables
     ...  rawEmail=${payload}[rawEmail]
     ...  Has-Attachments=${has_attachments}  
     ...  Body=${body}
 
-    ${email}    Create Dictionary
-    ...  Message=${message}  
-    ...  Has-Attachments=${has_attachments}  
-    ...  Body=${body}
+    ${email}    Create Dictionary  Message=${message}  
 
     IF    ${has_attachments}
         Create Directory  attachments
