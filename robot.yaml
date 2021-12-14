@@ -1,0 +1,12 @@
+tasks:
+  Decode Email to Work Item:
+    robotTaskName: Decode Email to Work Item
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - .
+ignoreFiles:
+  - .gitignore
