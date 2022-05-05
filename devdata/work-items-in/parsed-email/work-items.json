@@ -1,0 +1,28 @@
+[
+  {
+      "payload": {
+        "email": {
+          "from": {
+            "name": "Cosmin Poieană",
+            "address": "cosmin@robocorp.com"
+          },
+          "to": [
+            {
+              "name": "",
+              "address": "process.Robocorp.E-mailtrigge.bh6evwqlvt@mail.eu1.robocloud.eu"
+            }
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Parsed trigger & attachments",
+          "date": "2022-05-05T13:17:56.000Z",
+          "text": "{\n    \"message\": \"from email\"\n}"
+        }
+      },
+      "files": {
+          "test.txt": "test.txt",
+          "__raw_mail": "__raw_mail",
+          "__mail.html": "__mail.html"
+      }
+  }
+]
