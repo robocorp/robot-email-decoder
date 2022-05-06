@@ -6,5 +6,4 @@ dependencies:
 
   - pip=20.1
   - pip:
-    # - rpaframework==14.1.0 # https://rpaframework.org/releasenotes.html
-    - https://robocorp:freeasinbeer@devpi.robocorp.cloud/ci/test/+f/39f/9b2e276f1821d/rpaframework-14.0.0-py3-none-any.whl#sha256=39f9b2e276f1821d316c7c45e7ee226ffcc3f7f96cf535230cfa3252463e386b
+    - rpaframework==14.1.0 # https://rpaframework.org/releasenotes.html
