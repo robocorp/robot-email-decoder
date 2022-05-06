@@ -1,8 +1,8 @@
 tasks:
-  Decode Raw Email To Work Item:
-    robotTaskName: Decode Raw Email To Work Item
   Decode Parsed Email To Work Item:
     robotTaskName: Decode Parsed Email To Work Item
+  Decode Raw Email To Work Item:
+    robotTaskName: Decode Raw Email To Work Item
 
 condaConfigFile: conda.yaml
 artifactsDir: output

@@ -10,6 +10,16 @@ ${ATTACHMENTS_DIR}    ${OUTPUT_DIR}${/}attachments
 
 
 *** Tasks ***
+Decode Parsed Email To Work Item
+    # With "Parse email" Control Room configuration option enabled.
+    ${email_parsed} =    Get Work Item Variable    email
+    Log Dictionary    ${email_parsed}
+    Log To Console    ${email_parsed}[body]
+
+    # E-mail attachments are already available as Work Item files.
+    ${files} =    List Work Item Files
+    Log List    ${files}
+
 Decode Raw Email To Work Item
     # With "Parse email" Control Room configuration option disabled.
     ${parsed_email} =    Get Work Item Variable    parsedEmail
@@ -32,13 +42,3 @@ Decode Raw Email To Work Item
         END
         Save work item
     END
-
-Decode Parsed Email To Work Item
-    # With "Parse email" Control Room configuration option enabled.
-    ${email_parsed} =    Get Work Item Variable    email
-    Log Dictionary    ${email_parsed}
-    Log To Console    ${email_parsed}[body]
-
-    # E-mail attachments are already available as Work Item files.
-    ${files} =    List Work Item Files
-    Log List    ${files}
