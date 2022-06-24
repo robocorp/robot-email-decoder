@@ -17,8 +17,9 @@ Decode Parsed Email To Work Item
     Log To Console    ${email_parsed}[body]
 
     # E-mail attachments are already available as Work Item files.
-    ${files} =    List Work Item Files
+    @{files} =    List Work Item Files
     Log List    ${files}
+
 
 Decode Raw Email To Work Item
     # With "Parse email" Control Room configuration option disabled.
@@ -28,17 +29,23 @@ Decode Raw Email To Work Item
     
     IF    ${parsed_email}[Has-Attachments]
         ${raw_email} =    Get Work Item Variable    rawEmail
-        ${message} =    Evaluate    email.message_from_string($raw_email)     modules=email
+        ${message} =    Evaluate    email.message_from_string($raw_email)
+        ...    modules=email
         Create Directory    ${ATTACHMENTS_DIR}
         Save Attachment
         ...    ${message}
         ...    target_folder=${ATTACHMENTS_DIR}
         ...    overwrite=${True}
         
-        ${files} =    List Files In Directory    ${ATTACHMENTS_DIR}
+        @{files} =    List Files In Directory    ${ATTACHMENTS_DIR}
         Create Output Work Item
         FOR  ${file}  IN  @{files}
             Add Work Item File    ${file}
         END
         Save work item
     END
+
+
+Display Attachments From Raw Step
+    @{files} =    List Work Item Files
+    Log List    ${files}

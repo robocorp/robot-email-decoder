@@ -3,6 +3,8 @@ tasks:
     robotTaskName: Decode Parsed Email To Work Item
   Decode Raw Email To Work Item:
     robotTaskName: Decode Raw Email To Work Item
+  Display Attachments From Raw Step:
+    robotTaskName: Display Attachments From Raw Step
 
 condaConfigFile: conda.yaml
 artifactsDir: output
