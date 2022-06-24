@@ -12,8 +12,8 @@ format)
 
 The e-mail file attachments can be discovered and retrieved as normal input Work Item
 files. Additionally, you can find two other *special* files:
-- __mail.html: the HTML content of the sent e-mail
-- __raw_mail: the raw data of the entire e-mail
+- `__mail.html`: the HTML content of the sent e-mail
+- `__raw_mail`: the raw data of the entire e-mail
 
 For backwards compatibility, you'll still get the old deprecated `parsedEmail` payload
 variable, but it contains the `parsedEmail[Body]` only, as the rest is found in the
