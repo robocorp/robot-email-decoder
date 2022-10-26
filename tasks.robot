@@ -26,7 +26,7 @@ Decode Raw Email To Work Item
     ${parsed_email} =    Get Work Item Variable    parsedEmail
     Log Dictionary    ${parsed_email}
     Log To Console    ${parsed_email}[Body]
-    
+
     IF    ${parsed_email}[Has-Attachments]
         ${raw_email} =    Get Work Item Variable    rawEmail
         ${message} =    Evaluate    email.message_from_string($raw_email)
@@ -36,7 +36,7 @@ Decode Raw Email To Work Item
         ...    ${message}
         ...    target_folder=${ATTACHMENTS_DIR}
         ...    overwrite=${True}
-        
+
         @{files} =    List Files In Directory    ${ATTACHMENTS_DIR}
         Create Output Work Item
         FOR  ${file}  IN  @{files}
