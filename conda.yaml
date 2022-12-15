@@ -6,4 +6,4 @@ dependencies:
 
   - pip=22.1.2
   - pip:
-    - rpaframework==18.0.0 # https://rpaframework.org/releasenotes.html
+    - rpaframework==19.4.1 # https://rpaframework.org/releasenotes.html

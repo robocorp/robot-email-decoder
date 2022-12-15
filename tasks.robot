@@ -11,7 +11,8 @@ ${ATTACHMENTS_DIR}    ${OUTPUT_DIR}${/}attachments
 
 *** Tasks ***
 Decode Parsed Email To Work Item
-    # With "Parse email" Control Room configuration option enabled.
+    [Documentation]    With "Parse email" Control Room configuration option enabled.
+
     ${email_parsed} =    Get Work Item Variable    email
     Log Dictionary    ${email_parsed}
     Log To Console    ${email_parsed}[body]
@@ -22,7 +23,9 @@ Decode Parsed Email To Work Item
 
 
 Decode Raw Email To Work Item
-    # With "Parse email" Control Room configuration option disabled.
+    [Documentation]    With "Parse email" Control Room configuration option disabled.
+    ...    (DEPRECATED)
+
     ${parsed_email} =    Get Work Item Variable    parsedEmail
     Log Dictionary    ${parsed_email}
     Log To Console    ${parsed_email}[Body]
@@ -38,14 +41,9 @@ Decode Raw Email To Work Item
         ...    overwrite=${True}
 
         @{files} =    List Files In Directory    ${ATTACHMENTS_DIR}
-        Create Output Work Item
+        Log List    ${files}
         FOR  ${file}  IN  @{files}
             Add Work Item File    ${file}
         END
         Save work item
     END
-
-
-Display Attachments From Raw Step
-    @{files} =    List Work Item Files
-    Log List    ${files}
