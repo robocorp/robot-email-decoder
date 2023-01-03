@@ -44,4 +44,4 @@ recommended `Decode Parsed Email To Work Item` one.
 
 Then test it by starting the process with an e-mail. We recommend enabling the "Parse
 email" configuration option in Control Room, more details in this
-[article](https://robocorp.com/docs/control-room/attended-or-unattended/email-trigger).
+[article](https://robocorp.com/docs/control-room/unattended/email-trigger#parse-email).
